@@ -1,0 +1,20 @@
+️## Start the Docker-in-Docker Service
+
+docker-compose up -d
+
+
+###This will launch the DIND container in the background.
+
+## Verify Docker Daemon Access
+  
+docker -H tcp://localhost:2375 info
+
+
+###You should see Docker daemon information indicating it's running properly.
+
+️## Run Docker Commands Inside the Container
+docker -H tcp://localhost:2375 run hello-world
+docker -H tcp://localhost:2375 ps
+
+##Stop the Setup
+docker-compose down
